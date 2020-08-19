@@ -139,7 +139,7 @@ data "aws_iam_policy_document" "cloudtrail_key_policy" {
     condition {
       test     = "StringEquals"
       variable = "kms:ViaService"
-      values   = ["ec2.${var.region}.amazonaws.com"]
+      values   = ["ec2.amazonaws.com"]
     }
     condition {
       test     = "StringEquals"

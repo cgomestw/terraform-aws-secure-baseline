@@ -187,7 +187,7 @@ data "aws_iam_policy_document" "cloudtrail_key_policy" {
 }
 
 resource "aws_kms_key" "cloudtrail" {
-  count = var.enabled && ! var.use_external_kms_key ? 1 : 0
+  count = var.enabled ? 1 : 0
 
   description             = "A KMS key to encrypt CloudTrail events."
   deletion_window_in_days = var.key_deletion_window_in_days

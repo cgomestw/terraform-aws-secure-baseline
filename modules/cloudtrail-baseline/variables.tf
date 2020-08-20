@@ -47,6 +47,16 @@ variable "iam_role_policy_name" {
   default     = "CloudTrail-CloudWatch-Delivery-Policy"
 }
 
+variable "use_external_kms_key" {
+  description = "A boolean that indicates whether the specific KMS key already exists. Create a new KMS key if it is set to false."
+  default     = false
+}
+
+variable "cloudtrail_kms_key_arn" {
+  description = "The external KMS key to configure cloudtrail"
+  default     = ""
+}
+
 variable "key_deletion_window_in_days" {
   description = "Duration in days after which the key is deleted after destruction of the resource, must be between 7 and 30 days. Defaults to 30 days."
   default     = 10

@@ -31,6 +31,8 @@ Enable CloudTrail in all regions and deliver events to CloudWatch Logs. CloudTra
 | iam\_role\_name | The name of the IAM Role to be used by CloudTrail to delivery logs to CloudWatch Logs group. | `string` | `"CloudTrail-CloudWatch-Delivery-Role"` | no |
 | iam\_role\_policy\_name | The name of the IAM Role Policy to be used by CloudTrail to delivery logs to CloudWatch Logs group. | `string` | `"CloudTrail-CloudWatch-Delivery-Policy"` | no |
 | is\_organization\_trail | Specifies whether the trail is an AWS Organizations trail. Organization trails log events for the master account and all member accounts. Can only be created in the organization master account. | `bool` | `false` | no |
+| use\_external\_kms\_key | A boolean that indicates whether the specific KMS key already exists. Create a new KMS key if it is set to false. | `bool` | `false` | no |
+| cloudtrail\_kms\_key\_arn | The external KMS key to configure cloudtrail | `string` | `arn:aws:kms:us-east-1:<account_id>:key/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee` | no |
 | key\_deletion\_window\_in\_days | Duration in days after which the key is deleted after destruction of the resource, must be between 7 and 30 days. Defaults to 30 days. | `number` | `10` | no |
 | region | The AWS region in which CloudTrail is set up. | `any` | n/a | yes |
 | s3\_bucket\_name | The name of the S3 bucket which will store configuration snapshots. | `any` | n/a | yes |
